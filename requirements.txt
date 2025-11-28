@@ -1,0 +1,12 @@
+google-genai 
+langchain 
+langchain-text-splitters
+langchain-google-genai 
+docx2txt
+# pydantic==2.5.3 
+pydantic
+pydantic-core
+chromadb 
+python-docx 
+openpyxl 
+pandas 

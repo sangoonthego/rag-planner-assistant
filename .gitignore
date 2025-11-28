@@ -1,0 +1,27 @@
+venv/
+.venv/
+env/
+
+vector_db/
+
+data/raw/
+
+.env
+.secrets
+*.key
+*.pem
+
+__pycache__/
+*.pyc
+*.pyd
+*.so
+
+.ipynb_checkpoints
+*.log
+!notebooks/initial_testing.ipynb # Cho phép commit file notebook, nhưng loại trừ checkpoint
+
+.pytest_cache/
+
+dist/
+build/
+*.egg-info/
