@@ -23,7 +23,7 @@ def get_rag_chain_and_retriever():
     
     # load Vector Store and init Retriever
     vector_store = initialize_vector_store()
-    retriever = vector_store.as_retriever(search_kwargs={"k": 3})
+    retriever = vector_store.as_retriever(search_kwargs={"k": 5})
 
     rag_chain = (
         retriever 
@@ -47,11 +47,8 @@ def get_rag_chain_and_retriever():
 def run_rag_query(query: str):
     try:
         rag_chain, retriever = get_rag_chain_and_retriever()
-        
         context_docs = retriever.invoke(query)
-        
         answer = rag_chain.invoke({"input": query})
-        
         return {"answer": answer, "context": context_docs}
         
     except Exception as e:
