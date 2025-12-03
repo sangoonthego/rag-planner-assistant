@@ -13,7 +13,7 @@ def main():
     print("Enter 'exit' or 'quit' if wanna end.")
     
     while True:
-        # Lấy câu hỏi từ người dùng
+        # get question from user
         user_query = input("\nQuestion (Query): ")
         
         if user_query.lower() in ["exit", "quit"]:
@@ -25,14 +25,12 @@ def main():
             
         print("\nProcessing...")
         
-        # Chạy logic RAG
+        # run logic RAG
         result = run_rag_query(user_query)
         
-        # Hiển thị câu trả lời và nguồn
         print("\n--- Assistant's Response ---")
         print(result.get("answer", "Cannot create Answer!!!"))
         
-        # Hiển thị các nguồn đã được truy xuất để kiểm chứng
         print("\n--- Query Source (Context) ---")
         # Context là danh sách các Document (chunks)
         context_docs = result.get("context", []) 
